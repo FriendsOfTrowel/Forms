@@ -1,0 +1,18 @@
+/**
+ * Forms
+ */
+
+@mixin mixin-dispatcher($value, $flags, $mixin) {
+  @if $mixin == 'Forms--mixin-example' {
+    @include Forms--mixin-example($value, $flags);
+  }
+};
+
+$selector: selector--constructor($Form--synthax, 'Form');
+
+@include selector($selector) {
+  @include declaration('-include-Forms--mixin-example', $Form--var-1);
+  @include declaration('content', $Form--var-2);
+
+  @include block-generation;
+}

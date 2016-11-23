@@ -1,0 +1,12 @@
+{
+  "stylevendors": [
+    "@bower/trowel-Forms/src/scss/Forms.scss"
+  ],
+  
+  "stylegui": [
+    "@bower/trowel-Forms//Forms-gui.scss"
+  ],
+  "templategui": [
+    "@bower/trowel-Forms//Forms-gui.html.twig"
+  ]
+}

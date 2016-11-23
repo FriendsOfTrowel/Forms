@@ -1,0 +1,40 @@
+{
+  "name": "friendsOfTrowel-Forms-component",
+  "homepage": "https://github.com/FriendsOfTrowel/Forms",
+  "authors": [
+    "Loïc Goyet <loic@troopers.email>"
+  ],
+  "description": "The official Trowel Component for Forms",
+  "main": [
+    "src/scss/Forms.scss",
+    "src/twig/Forms.html.twig",
+    "injector.json"
+  ],
+  "keywords": [
+    "scss",
+    "css",
+    "twig",
+    "html",
+    "trowel",
+    "trowel-Forms",
+    "Forms"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    ".bowerrc",
+    ".gitignore",
+    "gulpfile.js",
+    "package.json",
+    "sache.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FriendsOfTrowel/Forms.git"
+  },
+  "dependencies": {
+    "trowel-core": "^1.2.3"
+  }
+}
