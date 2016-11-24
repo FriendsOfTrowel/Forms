@@ -107,6 +107,14 @@ $checkbox--selector: selector--constructor($form--synthax, 'checkbox');
   @include declaration(display, flex);
   @include declaration(cursor, pointer);
   @include declaration(user-select, none);
+  @include declaration(font-size, $checkbox--font-size);
+  @include declaration(line-height, $checkbox--line-height);
+  @include declaration(padding, $checkbox--padding);
+  @include declaration(margin, $checkbox--margin);
+  @include declaration(font-style, $checkbox--font-style);
+  @include declaration(font-weight, $checkbox--font-weight);
+  @include declaration(text-transform, $checkbox--text-transform);
+
 
   @include block-generation($checkbox--selector);
 }
@@ -172,6 +180,14 @@ $radio--selector: selector--constructor($form--synthax, 'radio');
   @include declaration(display, flex);
   @include declaration(cursor, pointer);
   @include declaration(user-select, none);
+  @include declaration(font-size, $radio--font-size);
+  @include declaration(line-height, $radio--line-height);
+  @include declaration(padding, $radio--padding);
+  @include declaration(margin, $radio--margin);
+  @include declaration(font-style, $radio--font-style);
+  @include declaration(font-weight, $radio--font-weight);
+  @include declaration(text-transform, $radio--text-transform);
+
 
   @include block-generation($radio--selector);
 }

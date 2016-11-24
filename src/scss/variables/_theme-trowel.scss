@@ -51,6 +51,13 @@ $formgroup-help--font-style: null !default;
 $formgroup-help--font-weight: null !default;
 $formgroup-help--text-transform: null !default;
 
+$checkbox--font-size: null !default;
+$checkbox--line-height: null !default;
+$checkbox--padding: null !default;
+$checkbox--margin: null !default;
+$checkbox--font-style: null !default;
+$checkbox--font-weight: null !default;
+$checkbox--text-transform: null !default;
 
 $checkbox-indicator--size: 20px !default;
 $checkbox-indicator--margin: 0 10px 0 0 !default;
@@ -76,6 +83,14 @@ $checkbox-indicator-checked--background-position: null !default;
 $checkbox-indicator-checked--border-color: null !default;
 $checkbox-indicator-checked--box-shadow: null !default;
 
+
+$radio--font-size: null !default;
+$radio--line-height: null !default;
+$radio--padding: null !default;
+$radio--margin: null !default;
+$radio--font-style: null !default;
+$radio--font-weight: null !default;
+$radio--text-transform: null !default;
 
 $radio-indicator--size: 20px !default;
 $radio-indicator--margin: 0 10px 0 0 !default;
