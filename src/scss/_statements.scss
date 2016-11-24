@@ -1,18 +1,96 @@
 /**
- * Forms
+ * forms
  */
 
 @mixin mixin-dispatcher($value, $flags, $mixin) {
-  @if $mixin == 'Forms--mixin-example' {
-    @include Forms--mixin-example($value, $flags);
+  @if $mixin == 'forms--md-form-group' {
+    @include forms--md-form-group($value, $flags);
+  } @elseif $mixin == 'forms--md-form-label' {
+    @include forms--md-form-label($value, $flags);
   }
 };
 
-$selector: selector--constructor($Form--synthax, 'Form');
+$formgroup--selector: selector--constructor($form--synthax, 'form-group');
 
-@include selector($selector) {
-  @include declaration('-include-Forms--mixin-example', $Form--var-1);
-  @include declaration('content', $Form--var-2);
+@include selector($formgroup--selector) {
+  @include declaration(font-size, $formgroup--font-size);
+  @include declaration(font-family, $formgroup--font-family);
+  @include declaration(margin-bottom, $formgroup--margin-bottom);
+  @include declaration('-include-forms--md-form-group', $formgroup--md-effet);
 
-  @include block-generation;
+  @include block-generation($formgroup--selector);
+}
+
+
+$formgroup-label--selector: selector--set-element($formgroup--selector, 'label');
+
+@include selector($formgroup-label--selector) {
+  @include declaration(display, block);
+  @include declaration(font-size, $formgroup-label--font-size);
+  @include declaration(font-family, $formgroup-label--font-family);
+  @include declaration(margin-bottom, $formgroup-label--margin-bottom);
+  @include declaration(text-align, $formgroup-label--text-align);
+  @include declaration(line-height, $formgroup-label--line-height);
+  @include declaration(color, $formgroup-label--color);
+  @include declaration(font-style, $formgroup-label--font-style);
+  @include declaration(font-weight, $formgroup-label--font-weight);
+  @include declaration(text-transform, $formgroup-label--text-transform);
+  @include declaration(touch-action, manipulation);
+  @include declaration('-include-forms--md-form-label', $formgroup--md-effet);
+
+  @include block-generation($formgroup-label--selector);
+}
+
+
+$formgroup-input--selector: selector--set-element($formgroup--selector, 'input');
+
+@include selector($formgroup-input--selector) {
+  @include declaration(display, block);
+  @include declaration(width, 100%);
+  @include declaration(background-image, none);
+  @include declaration(background-clip, padding-box);
+  @include declaration(padding, $formgroup-input--padding);
+  @include declaration(font-size, $formgroup-input--font-size);
+  @include declaration(line-height, $formgroup-input--line-height);
+  @include declaration(color, $formgroup-input--color);
+  @include declaration(background-color, $formgroup-input--background-color);
+  @include declaration(border-width, $formgroup-input--border-width);
+  @include declaration(border-style, $formgroup-input--border-style);
+  @include declaration(border-color, $formgroup-input--border-color);
+  @include declaration(border-radius, $formgroup-input--border-radius);
+  @include declaration(box-shadow, $formgroup-input--box-shadow);
+  @include declaration(outline, $formgroup-input--outline);
+  @include declaration(font-style, $formgroup-input--font-style);
+  @include declaration(font-weight, $formgroup-input--font-weight);
+  @include declaration(text-transform, $formgroup-input--text-transform);
+
+  @include block-generation($formgroup-input--selector);
+}
+
+
+$formgroup-help--selector: selector--set-element($formgroup--selector, 'help');
+
+@include selector($formgroup-help--selector) {
+  @include declaration(display, block);
+  @include declaration(width, 100%);
+  @include declaration(margin, $formgroup-help--margin);
+  @include declaration(padding, $formgroup-help--padding);
+  @include declaration(font-size, $formgroup-help--font-size);
+  @include declaration(line-height, $formgroup-help--line-height);
+  @include declaration(color, $formgroup-help--color);
+  @include declaration(background-color, $formgroup-help--background-color);
+  @include declaration(background-image, $formgroup-help--background-image);
+  @include declaration(background-position, $formgroup-help--background-position);
+  @include declaration(background-size, $formgroup-help--background-size);
+  @include declaration(background-repeat, $formgroup-help--background-repeat);
+  @include declaration(border-width, $formgroup-help--border-width);
+  @include declaration(border-style, $formgroup-help--border-style);
+  @include declaration(border-color, $formgroup-help--border-color);
+  @include declaration(border-radius, $formgroup-help--border-radius);
+  @include declaration(box-shadow, $formgroup-help--box-shadow);
+  @include declaration(font-style, $formgroup-help--font-style);
+  @include declaration(font-weight, $formgroup-help--font-weight);
+  @include declaration(text-transform, $formgroup-help--text-transform);
+
+  @include block-generation($formgroup-help--selector);
 }

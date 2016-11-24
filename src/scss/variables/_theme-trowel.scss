@@ -1,12 +1,52 @@
-$Form--var-1: (
-  'default': 'var-1--default',
-  '-modifier': 'var-1--modifier',
-  '@sm': 'var-1--breakpoint',
-  '<a': (
-    'default': 'var-1--tag',
-    ':hover': 'var-1--a:hover',
-  ),
-  ':hover': 'var-1--hover',
+$formgroup--font-size: 1rem !default;
+$formgroup--font-family: null !default;
+$formgroup--margin-bottom: 2em !default;
+$formgroup--md-effet: (
+  '-md': true,
 ) !default;
 
-$Form--var-2: 'var-2' !default;
+$formgroup-label--font-size: 0.875em !default;
+$formgroup-label--font-family: null !default;
+$formgroup-label--margin-bottom: 0.5em !default;
+$formgroup-label--text-align: null !default;
+$formgroup-label--line-height: 1.143 !default;
+$formgroup-label--color: null !default;
+$formgroup-label--font-style: null !default;
+$formgroup-label--font-weight: null !default;
+$formgroup-label--text-transform: null !default;
+
+$formgroup-input--padding: 0 0 0.5em !default;
+$formgroup-input--font-size: 1em !default;
+$formgroup-input--line-height: 1.25 !default;
+$formgroup-input--color: black !default;
+$formgroup-input--background-color: white !default;
+$formgroup-input--border-width: 0 0 0.0625em 0 !default;
+$formgroup-input--border-style: solid !default;
+$formgroup-input--border-color: null !default;
+$formgroup-input--border-radius: null !default;
+$formgroup-input--box-shadow: null !default;
+$formgroup-input--font-style: null !default;
+$formgroup-input--font-weight: null !default;
+$formgroup-input--text-transform: null !default;
+$formgroup-input--outline: (
+  ':focus': 0,
+) !default;
+
+$formgroup-help--margin: 0.5em 0 0 !default;
+$formgroup-help--padding: null !default;
+$formgroup-help--font-size: 0.8em !default;
+$formgroup-help--line-height: null !default;
+$formgroup-help--color: null !default;
+$formgroup-help--background-color: null !default;
+$formgroup-help--background-image: null !default;
+$formgroup-help--background-position: null !default;
+$formgroup-help--background-size: null !default;
+$formgroup-help--background-repeat: null !default;
+$formgroup-help--border-width: null !default;
+$formgroup-help--border-style: null !default;
+$formgroup-help--border-color: null !default;
+$formgroup-help--border-radius: null !default;
+$formgroup-help--box-shadow: null !default;
+$formgroup-help--font-style: null !default;
+$formgroup-help--font-weight: null !default;
+$formgroup-help--text-transform: null !default;

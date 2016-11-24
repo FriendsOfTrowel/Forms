@@ -14,6 +14,11 @@ gulp.task('template_test', function() {
 
 });
 
+gulp.task('script_test', function() {
+    return gulp.src('./src/javascript/**/*')
+        .pipe(gulp.dest('./test/dest/javascript'));
+})
+
 
 
 AUTOPREFIXER_BROWSERS = [
@@ -54,7 +59,7 @@ gulp.task('scss_test', function () {
 
 
 
-gulp.task('test', ['scss_test', 'template_test']);
+gulp.task('test', ['scss_test', 'template_test', 'script_test']);
 gulp.task('test_watch', ['test'], function() {
   browserSync({
     notify: false,
@@ -63,6 +68,7 @@ gulp.task('test_watch', ['test'], function() {
   });
 
   gulp.watch(['src/scss/**/*.scss', 'test/src/**/*.scss'], ['scss_test', reload]);
+  gulp.watch('./src/javascript/**/*', ['script_test', reload]);
   gulp.watch(['test/src/**/*.html.twig', 'src/twig/**/*.html.twig'], ['template_test', reload]);
-  
+
 });
