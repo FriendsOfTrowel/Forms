@@ -7,6 +7,8 @@
     @include forms--md-form-group($value, $flags);
   } @elseif $mixin == 'forms--md-form-label' {
     @include forms--md-form-label($value, $flags);
+  } @elseif $mixin == 'forms--checkbox-native-margin' {
+    @include forms--checkbox-native-margin($value, $flags);
   }
 };
 
@@ -93,4 +95,69 @@ $formgroup-help--selector: selector--set-element($formgroup--selector, 'help');
   @include declaration(text-transform, $formgroup-help--text-transform);
 
   @include block-generation($formgroup-help--selector);
+}
+
+
+
+
+$checkbox--selector: selector--constructor($form--synthax, 'checkbox');
+
+@include selector($checkbox--selector) {
+  @include declaration(position, relative);
+  @include declaration(display, flex);
+  @include declaration(cursor, pointer);
+  @include declaration(user-select, none);
+
+  @include block-generation($checkbox--selector);
+}
+
+
+$checkbox-native--selector: selector--set-element($checkbox--selector, 'native');
+$checkbox-native-checked--selector: selector--append-pseudo-classes($checkbox-native--selector, 'checked');
+
+@include selector($checkbox-native--selector) {
+  @include declaration(position, absolute);
+  @include declaration(transform, translate(-50%, -50%));
+  @include declaration(opacity, 0);
+  @include declaration('-include-forms--checkbox-native-margin', $checkbox-indicator--size);
+
+  @include block-generation($checkbox-native--selector);
+}
+
+
+$checkbox-indicator--selector: selector--set-element($checkbox--selector, 'indicator');
+$checkbox-indicator-checked--selector: selector--append-parent($checkbox-indicator--selector, $checkbox-native-checked--selector, '~');
+
+@include selector($checkbox-indicator--selector) {
+  @include declaration(display, inline-block);
+  @include declaration(width, $checkbox-indicator--size);
+  @include declaration(height, $checkbox-indicator--size);
+  @include declaration(margin, $checkbox-indicator--margin);
+  @include declaration(background-color, $checkbox-indicator--background-color);
+  @include declaration(background-image, $checkbox-indicator--background-image);
+  @include declaration(background-repeat, $checkbox-indicator--background-repeat);
+  @include declaration(background-size, $checkbox-indicator--background-size);
+  @include declaration(background-position, $checkbox-indicator--background-position);
+  @include declaration(border-radius, $checkbox-indicator--border-radius);
+  @include declaration(border-width, $checkbox-indicator--border-width);
+  @include declaration(border-style, $checkbox-indicator--border-style);
+  @include declaration(border-color, $checkbox-indicator--border-color);
+  @include declaration(transition-property, $checkbox-indicator--transition-property);
+  @include declaration(transition-timing-function, $checkbox-indicator--transition-timing-function);
+  @include declaration(transition-duration, $checkbox-indicator--transition-duration);
+  @include declaration(box-shadow, $checkbox-indicator--box-shadow);
+
+  @include block-generation($checkbox-indicator--selector);
+}
+
+@include selector($checkbox-indicator-checked--selector) {
+  @include declaration(background-color, $checkbox-indicator-checked--background-color);
+  @include declaration(background-image, $checkbox-indicator-checked--background-image);
+  @include declaration(background-repeat, $checkbox-indicator-checked--background-repeat);
+  @include declaration(background-size, $checkbox-indicator-checked--background-size);
+  @include declaration(background-position, $checkbox-indicator-checked--background-position);
+  @include declaration(border-color, $checkbox-indicator-checked--border-color);
+  @include declaration(box-shadow, $checkbox-indicator-checked--box-shadow);
+
+  @include block-generation($checkbox-indicator-checked--selector);
 }

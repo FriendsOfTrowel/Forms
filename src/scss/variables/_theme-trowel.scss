@@ -50,3 +50,28 @@ $formgroup-help--box-shadow: null !default;
 $formgroup-help--font-style: null !default;
 $formgroup-help--font-weight: null !default;
 $formgroup-help--text-transform: null !default;
+
+
+$checkbox-indicator--size: 20px !default;
+$checkbox-indicator--margin: 0 10px 0 0 !default;
+$checkbox-indicator--background-color: grey !default;
+$checkbox-indicator--background-image: null !default;
+$checkbox-indicator--background-repeat: null !default;
+$checkbox-indicator--background-size: null !default;
+$checkbox-indicator--background-position: null !default;
+$checkbox-indicator--border-radius: 3px !default;
+$checkbox-indicator--border-width: 1px !default;
+$checkbox-indicator--border-style: solid !default;
+$checkbox-indicator--border-color: transparent !default;
+$checkbox-indicator--transition-property: null !default;
+$checkbox-indicator--transition-timing-function: null !default;
+$checkbox-indicator--transition-duration: null !default;
+$checkbox-indicator--box-shadow: null !default;
+
+$checkbox-indicator-checked--background-color: blue !default;
+$checkbox-indicator-checked--background-image: null !default;
+$checkbox-indicator-checked--background-repeat: null !default;
+$checkbox-indicator-checked--background-size: null !default;
+$checkbox-indicator-checked--background-position: null !default;
+$checkbox-indicator-checked--border-color: null !default;
+$checkbox-indicator-checked--box-shadow: null !default;

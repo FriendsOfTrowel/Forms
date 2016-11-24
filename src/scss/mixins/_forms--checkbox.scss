@@ -1,0 +1,3 @@
+@mixin forms--checkbox-native-margin($value, $flags) {
+  @include declaration(margin, ($value / 2), $flags);
+}
