@@ -161,3 +161,68 @@ $checkbox-indicator-checked--selector: selector--append-parent($checkbox-indicat
 
   @include block-generation($checkbox-indicator-checked--selector);
 }
+
+
+
+
+$radio--selector: selector--constructor($form--synthax, 'radio');
+
+@include selector($radio--selector) {
+  @include declaration(position, relative);
+  @include declaration(display, flex);
+  @include declaration(cursor, pointer);
+  @include declaration(user-select, none);
+
+  @include block-generation($radio--selector);
+}
+
+
+$radio-native--selector: selector--set-element($radio--selector, 'native');
+$radio-native-checked--selector: selector--append-pseudo-classes($radio-native--selector, 'checked');
+
+@include selector($radio-native--selector) {
+  @include declaration(position, absolute);
+  @include declaration(transform, translate(-50%, -50%));
+  @include declaration(opacity, 0);
+  @include declaration('-include-forms--checkbox-native-margin', $radio-indicator--size);
+
+  @include block-generation($radio-native--selector);
+}
+
+
+$radio-indicator--selector: selector--set-element($radio--selector, 'indicator');
+$radio-indicator-checked--selector: selector--append-parent($radio-indicator--selector, $radio-native-checked--selector, '~');
+
+@include selector($radio-indicator--selector) {
+  @include declaration(display, inline-block);
+  @include declaration(width, $radio-indicator--size);
+  @include declaration(height, $radio-indicator--size);
+  @include declaration(margin, $radio-indicator--margin);
+  @include declaration(background-color, $radio-indicator--background-color);
+  @include declaration(background-image, $radio-indicator--background-image);
+  @include declaration(background-repeat, $radio-indicator--background-repeat);
+  @include declaration(background-size, $radio-indicator--background-size);
+  @include declaration(background-position, $radio-indicator--background-position);
+  @include declaration(border-radius, $radio-indicator--border-radius);
+  @include declaration(border-width, $radio-indicator--border-width);
+  @include declaration(border-style, $radio-indicator--border-style);
+  @include declaration(border-color, $radio-indicator--border-color);
+  @include declaration(transition-property, $radio-indicator--transition-property);
+  @include declaration(transition-timing-function, $radio-indicator--transition-timing-function);
+  @include declaration(transition-duration, $radio-indicator--transition-duration);
+  @include declaration(box-shadow, $radio-indicator--box-shadow);
+
+  @include block-generation($radio-indicator--selector);
+}
+
+@include selector($radio-indicator-checked--selector) {
+  @include declaration(background-color, $radio-indicator-checked--background-color);
+  @include declaration(background-image, $radio-indicator-checked--background-image);
+  @include declaration(background-repeat, $radio-indicator-checked--background-repeat);
+  @include declaration(background-size, $radio-indicator-checked--background-size);
+  @include declaration(background-position, $radio-indicator-checked--background-position);
+  @include declaration(border-color, $radio-indicator-checked--border-color);
+  @include declaration(box-shadow, $radio-indicator-checked--box-shadow);
+
+  @include block-generation($radio-indicator-checked--selector);
+}
