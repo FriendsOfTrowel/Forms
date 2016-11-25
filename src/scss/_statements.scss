@@ -9,6 +9,12 @@
     @include forms--md-form-label($value, $flags);
   } @elseif $mixin == 'forms--checkbox-native-margin' {
     @include forms--checkbox-native-margin($value, $flags);
+  } @elseif $mixin == 'forms--select-caret-switch' {
+    @include forms--select-caret-switch($value, $flags);
+  } @elseif $mixin == 'forms--select-caret-margin-top' {
+    @include forms--select-caret-margin-top($value, $flags);
+  } @elseif $mixin == 'forms--select-padding-right' {
+    @include forms--select-padding-right($value, $flags);
   }
 };
 
@@ -241,4 +247,68 @@ $radio-indicator-checked--selector: selector--append-parent($radio-indicator--se
   @include declaration(box-shadow, $radio-indicator-checked--box-shadow);
 
   @include block-generation($radio-indicator-checked--selector);
+}
+
+
+
+$select--selector: selector--constructor($form--synthax, 'select');
+
+@include selector($select--selector) {
+  @include declaration(position, relative);
+  @include declaration(display, inline-block);
+  @include declaration(font-size, $select--font-size);
+  @include declaration(font-family, $select--font-family);
+  @include declaration(border-radius, $select--border-radius);
+  @include declaration(border-width, $select--border-width);
+  @include declaration(border-style, $select--border-style);
+  @include declaration(border-color, $select--border-color);
+  @include declaration(box-shadow, $select--box-shadow);
+  @include declaration(width, $select--width);
+  @include declaration(height, $select--height);
+  @include declaration(margin, $select--margin);
+
+  @include block-generation($select--selector);
+}
+
+
+$select-native--selector: selector--set-element($select--selector, 'native');
+
+@include selector($select-native--selector) {
+  @include declaration(display, inline-block);
+  @include declaration(font-size, 1em);
+  @include declaration(width, 100%);
+  @include declaration(margin, 0);
+  @include declaration(padding-top, $select--padding-y);
+  @include declaration(padding-bottom, $select--padding-y);
+  @include declaration(padding-left, $select--padding-x);
+  @include declaration('-include-forms--select-padding-right', $select--padding-x);
+  @include declaration(line-height, $select--line-height);
+  @include declaration(color, $select--color);
+  @include declaration(background-color, $select--background-color);
+  @include declaration(border, 0);
+  @include declaration(border-radius, $select--border-radius);
+  @include declaration(cursor, $select--cursor);
+  @include declaration(outline, 0);
+  @include declaration(appearance, none);
+
+  // Undo the Firefox inner focus ring
+  @include declaration(color, transparent, (':focus', ':-moz-focusring'));
+  @include declaration(text-shadow, 0 0 0 #000, (':focus', ':-moz-focusring'));
+
+  @include block-generation($select-native--selector);
+}
+
+
+$select-caret--selector: selector--set-pseudo-element($select--selector, 'after');
+
+@include selector($select-caret--selector) {
+  @include declaration(content, '');
+  @include declaration(position, absolute);
+  @include declaration(top, 50%);
+  @include declaration(right, $select--padding-x);
+  @include declaration(display, inline-block);
+  @include declaration('-include-forms--select-caret-switch', $select-caret--method);
+  @include declaration('-include-forms--select-caret-margin-top', $select-caret--height);
+
+  @include block-generation($select-caret--selector);
 }

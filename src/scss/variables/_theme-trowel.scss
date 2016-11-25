@@ -115,3 +115,28 @@ $radio-indicator-checked--background-size: null !default;
 $radio-indicator-checked--background-position: null !default;
 $radio-indicator-checked--border-color: null !default;
 $radio-indicator-checked--box-shadow: null !default;
+
+
+
+$select--color: black !default;
+$select--font-size: 1rem !default;
+$select--font-family: null !default;
+$select--border-radius: 0.1875em !default;
+$select--border-width: 1px !default;
+$select--border-style: solid !default;
+$select--border-color: null !default;
+$select--box-shadow: null !default;
+$select--width: null !default;
+$select--height: null !default;
+$select--margin: null !default;
+$select--padding-x: 1em !default;
+$select--padding-y: 0.5em !default;
+$select--line-height: 1.5 !default;
+$select--background-color: #eee !default;
+$select--cursor: pointer !default;
+
+$select-caret--method: 'css'; // 'image' or 'css'
+$select-caret--width: 0.7em;
+$select-caret--height: 0.4em;
+$select-caret--margin-left: 0.5em;
+$select-caret--background-color: currentColor;

@@ -1,0 +1,33 @@
+@mixin forms--select-caret-switch($value, $flags) {
+  $width: value($select-caret--width, $flags);
+  $height: value($select-caret--height, $flags);
+  $background-color: value($select-caret--background-color, $flags);
+
+
+  @if $value == 'image' {
+    @include declaration(width, $width, $flags);
+    @include declaration(height, $height, $flags);
+    @include declaration(background-color, $background-color, $flags);
+    @include declaration(border-left, 0);
+    @include declaration(border-right, 0);
+    @include declaration(border-top, 0);
+  } @elseif $value == 'css' {
+    @include declaration(width, 0, $flags);
+    @include declaration(height, 0, $flags);
+    @include declaration(border-left, ($width / 2) solid transparent, $flags);
+    @include declaration(border-right, ($width / 2) solid transparent, $flags);
+    @include declaration(border-top, $height solid $background-color, $flags);
+  }
+}
+
+@mixin forms--select-caret-margin-top($value, $flags) {
+  @include declaration(margin-top, (-$value / 2), $flags);
+}
+
+@mixin forms--select-padding-right($value, $flags) {
+  $padding-right: $value;
+  $caret--width: value($select-caret--width, $flags);
+  $caret--margin-left: value($select-caret--margin-left, $flags);
+
+  @include declaration(padding-right, $caret--margin-left + $caret--width + $padding-right, $flags);
+}
