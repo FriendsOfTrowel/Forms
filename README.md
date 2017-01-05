@@ -9,32 +9,31 @@ Forms is a *Trowel Component*, please refer to the [Trowel doc](http://trowel.gi
 
 ## Getting Started
 ### Download
-You can easily install trowel-Forms by using npm, Yarn or Bower
+You can easily install trowel-Forms by using npm, Yarn or Bower with the name `trowel-forms` (previously `friendsOfTrowel-Forms-component`)
 
 ```bash
 # With bower
-$ bower install friendsOfTrowel-Forms-component
+$ bower install trowel-forms
 
 # With npm
-$ npm install friendsOfTrowel-Forms-component
+$ npm install trowel-forms
 
 # With yarn
-$ yarn add friendsOfTrowel-Forms-component
+$ yarn add trowel-forms
 ```
 
 You can also download a zip archive [right here](https://github.com/FriendsOfTrowel/Forms/archive/master.zip).
 
 ### Installation
 #### *SCSS*
-The main scss file to include to your main `.scss` file is located at the `./src/scss/Forms.scss`. As a *Trowel Component*, it also requires two dependencies to compile the *scss* code. Here an *scss* installation snippet.
+The main scss file to include to your main `.scss` file is located at the `./src/scss/forms.scss`. As a *Trowel Component*, it also requires two dependencies to compile the *scss* code. Here an *scss* installation snippet.
 
 ```
 // Trowel Dependencies
-@import './path/to/dependencies/sassy-maps/sass/sassy-maps';
 @import './path/to/dependencies/trowel-core/src/trowel';
 
 // Trowel Components Forms
-@import './path/to/dependencies/src/scss/Forms.scss';
+@import './path/to/dependencies/trowel-forms/src/scss/forms.scss';
 ```
 
 

@@ -1,6 +1,6 @@
 {
-  "name": "friendsOfTrowel-Forms-component",
-  "version": "0.1.0",
+  "name": "trowel-forms",
+  "version": "1.0.0",
   "description": "The official Trowel Component for Forms",
   "scripts": {
     "test": "gulp test",
@@ -15,11 +15,6 @@
   "bugs": {
     "url": "https://github.com/FriendsOfTrowel/Forms/issues"
   },
-  "files": [
-    "src/scss/Forms.scss",
-    "src/twig/Forms.html.twig",
-    "injector.json"
-  ],
   "keywords": [
     "scss",
     "css",
@@ -45,5 +40,8 @@
     "gulp-sourcemaps": "^1.9.1",
     "gulp-twig": "^0.7.0",
     "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "trowel-core": "^2.0.0"
   }
 }

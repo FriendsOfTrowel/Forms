@@ -1,5 +1,5 @@
 {
-  "name": "friendsOfTrowel-Forms-component",
+  "name": "trowel-forms",
   "homepage": "https://github.com/FriendsOfTrowel/Forms",
   "authors": [
     "Loïc Goyet <loic@troopers.email>"
@@ -35,6 +35,6 @@
     "url": "git+https://github.com/FriendsOfTrowel/Forms.git"
   },
   "dependencies": {
-    "trowel-core": "^1.2.3"
+    "trowel-core": "^2.0.0"
   }
 }
