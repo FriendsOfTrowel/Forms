@@ -1,6 +1,6 @@
 {
   "name": "trowel-forms",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The official Trowel Component for Forms",
   "scripts": {
     "test": "gulp test",
@@ -42,6 +42,6 @@
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
-    "trowel-core": "^2.0.0"
+    "trowel-core": "^3.0.0"
   }
 }
