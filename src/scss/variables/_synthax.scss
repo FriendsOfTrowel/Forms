@@ -1,9 +1,10 @@
-$form--prefix: 'c' !default;
-$form--synthax: (
-  'prefix': $form--prefix,
-  'separator': (
-    'prefix': '-',
-    'element': '__',
-    'modifier': '--',
-  ),
-);
+// $form--synthax: (
+//   'prefix': 'c',
+//   'separator': (
+//     'prefix': '-',
+//     'element': '__',
+//     'modifier': '--',
+//   ),
+// ) !default;
+
+$form--synthax: null;
