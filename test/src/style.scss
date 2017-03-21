@@ -2,5 +2,15 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
+
+$form--syntax: (
+  'prefix': 'c',
+  'separator': (
+    'prefix': '-',
+    'element': '__',
+    'modifier': '--',
+  ),
+);
+
 @import 'bower_components/trowel-core/src/trowel';
 @import '../../src/scss/forms';

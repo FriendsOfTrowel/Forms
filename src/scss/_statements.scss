@@ -2,318 +2,270 @@
  * forms
  */
 
-@mixin mixin-dispatcher($value, $flags, $mixin) {
-  @if $mixin == 'forms--md-form-group' {
-    @include forms--md-form-group($value, $flags);
-  } @elseif $mixin == 'forms--md-form-label' {
-    @include forms--md-form-label($value, $flags);
-  } @elseif $mixin == 'forms--checkbox-native-margin' {
-    @include forms--checkbox-native-margin($value, $flags);
-  } @elseif $mixin == 'forms--select-caret-switch' {
-    @include forms--select-caret-switch($value, $flags);
-  } @elseif $mixin == 'forms--select-caret-margin-top' {
-    @include forms--select-caret-margin-top($value, $flags);
-  } @elseif $mixin == 'forms--select-padding-right' {
-    @include forms--select-padding-right($value, $flags);
-  }
-};
-
 @if $formgroup--enable {
-  $formgroup--selector: selector--constructor($form--synthax, 'form-group');
+  $formgroup--selector: selector(new 'form-group' with $form--syntax);
 
-  @include selector($formgroup--selector) {
-    @include declaration(font-size, $formgroup--font-size);
-    @include declaration(font-family, $formgroup--font-family);
-    @include declaration(margin-bottom, $formgroup--margin-bottom);
-    @include declaration('-include-forms--md-form-group', $formgroup--md-effet);
-
-    @include block-generation($formgroup--selector);
-  }
+  @include statement($formgroup--selector, (
+    (font-size, $formgroup--font-size),
+    (font-family, $formgroup--font-family),
+    (margin-bottom, $formgroup--margin-bottom),
+    ('@include forms--md-form-group', $formgroup--md-effet),
+  ));
 
 
-  $formgroup-label--selector: selector--set-element($formgroup--selector, 'label');
+  $formgroup-label--selector: selector(set $formgroup--selector element 'label');
 
-  @include selector($formgroup-label--selector) {
-    @include declaration(display, block);
-    @include declaration(font-size, $formgroup-label--font-size);
-    @include declaration(font-family, $formgroup-label--font-family);
-    @include declaration(margin-bottom, $formgroup-label--margin-bottom);
-    @include declaration(text-align, $formgroup-label--text-align);
-    @include declaration(line-height, $formgroup-label--line-height);
-    @include declaration(color, $formgroup-label--color);
-    @include declaration(font-style, $formgroup-label--font-style);
-    @include declaration(font-weight, $formgroup-label--font-weight);
-    @include declaration(text-transform, $formgroup-label--text-transform);
-    @include declaration(touch-action, manipulation);
-    @include declaration('-include-forms--md-form-label', $formgroup--md-effet);
-
-    @include block-generation($formgroup-label--selector);
-  }
+  @include statement($formgroup-label--selector, (
+    (display, block),
+    (font-size, $formgroup-label--font-size),
+    (font-family, $formgroup-label--font-family),
+    (margin-bottom, $formgroup-label--margin-bottom),
+    (text-align, $formgroup-label--text-align),
+    (line-height, $formgroup-label--line-height),
+    (color, $formgroup-label--color),
+    (font-style, $formgroup-label--font-style),
+    (font-weight, $formgroup-label--font-weight),
+    (text-transform, $formgroup-label--text-transform),
+    (touch-action, manipulation),
+    ('@include forms--md-form-label', $formgroup--md-effet),
+  ));
 
 
-  $formgroup-input--selector: selector--set-element($formgroup--selector, 'input');
+  $formgroup-input--selector: selector(set $formgroup--selector element 'input');
 
-  @include selector($formgroup-input--selector) {
-    @include declaration(display, block);
-    @include declaration(width, 100%);
-    @include declaration(background-image, none);
-    @include declaration(background-clip, padding-box);
-    @include declaration(padding, $formgroup-input--padding);
-    @include declaration(font-size, $formgroup-input--font-size);
-    @include declaration(line-height, $formgroup-input--line-height);
-    @include declaration(color, $formgroup-input--color);
-    @include declaration(background-color, $formgroup-input--background-color);
-    @include declaration(border-width, $formgroup-input--border-width);
-    @include declaration(border-style, $formgroup-input--border-style);
-    @include declaration(border-color, $formgroup-input--border-color);
-    @include declaration(border-radius, $formgroup-input--border-radius);
-    @include declaration(box-shadow, $formgroup-input--box-shadow);
-    @include declaration(outline, $formgroup-input--outline);
-    @include declaration(font-style, $formgroup-input--font-style);
-    @include declaration(font-weight, $formgroup-input--font-weight);
-    @include declaration(text-transform, $formgroup-input--text-transform);
-
-    @include block-generation($formgroup-input--selector);
-  }
+  @include statement($formgroup-input--selector, (
+    (display, block),
+    (width, 100%),
+    (background-image, none),
+    (background-clip, padding-box),
+    (padding, $formgroup-input--padding),
+    (font-size, $formgroup-input--font-size),
+    (line-height, $formgroup-input--line-height),
+    (color, $formgroup-input--color),
+    (background-color, $formgroup-input--background-color),
+    (border-width, $formgroup-input--border-width),
+    (border-style, $formgroup-input--border-style),
+    (border-color, $formgroup-input--border-color),
+    (border-radius, $formgroup-input--border-radius),
+    (box-shadow, $formgroup-input--box-shadow),
+    (outline, $formgroup-input--outline),
+    (font-style, $formgroup-input--font-style),
+    (font-weight, $formgroup-input--font-weight),
+    (text-transform, $formgroup-input--text-transform),
+  ));
 
 
-  $formgroup-help--selector: selector--set-element($formgroup--selector, 'help');
+  $formgroup-help--selector: selector(set $formgroup--selector element 'help');
 
-  @include selector($formgroup-help--selector) {
-    @include declaration(display, block);
-    @include declaration(width, 100%);
-    @include declaration(margin, $formgroup-help--margin);
-    @include declaration(padding, $formgroup-help--padding);
-    @include declaration(font-size, $formgroup-help--font-size);
-    @include declaration(line-height, $formgroup-help--line-height);
-    @include declaration(color, $formgroup-help--color);
-    @include declaration(background-color, $formgroup-help--background-color);
-    @include declaration(background-image, $formgroup-help--background-image);
-    @include declaration(background-position, $formgroup-help--background-position);
-    @include declaration(background-size, $formgroup-help--background-size);
-    @include declaration(background-repeat, $formgroup-help--background-repeat);
-    @include declaration(border-width, $formgroup-help--border-width);
-    @include declaration(border-style, $formgroup-help--border-style);
-    @include declaration(border-color, $formgroup-help--border-color);
-    @include declaration(border-radius, $formgroup-help--border-radius);
-    @include declaration(box-shadow, $formgroup-help--box-shadow);
-    @include declaration(font-style, $formgroup-help--font-style);
-    @include declaration(font-weight, $formgroup-help--font-weight);
-    @include declaration(text-transform, $formgroup-help--text-transform);
-
-    @include block-generation($formgroup-help--selector);
-  }
+  @include statement($formgroup-help--selector, (
+    (display, block),
+    (width, 100%),
+    (margin, $formgroup-help--margin),
+    (padding, $formgroup-help--padding),
+    (font-size, $formgroup-help--font-size),
+    (line-height, $formgroup-help--line-height),
+    (color, $formgroup-help--color),
+    (background-color, $formgroup-help--background-color),
+    (background-image, $formgroup-help--background-image),
+    (background-position, $formgroup-help--background-position),
+    (background-size, $formgroup-help--background-size),
+    (background-repeat, $formgroup-help--background-repeat),
+    (border-width, $formgroup-help--border-width),
+    (border-style, $formgroup-help--border-style),
+    (border-color, $formgroup-help--border-color),
+    (border-radius, $formgroup-help--border-radius),
+    (box-shadow, $formgroup-help--box-shadow),
+    (font-style, $formgroup-help--font-style),
+    (font-weight, $formgroup-help--font-weight),
+    (text-transform, $formgroup-help--text-transform),
+  ));
 }
 
 
 
 @if $checkbox--enable {
-  $checkbox--selector: selector--constructor($form--synthax, 'checkbox');
+  $checkbox--selector: selector(new 'checkbox' with $form--syntax);
 
-  @include selector($checkbox--selector) {
-    @include declaration(position, relative);
-    @include declaration(display, flex);
-    @include declaration(cursor, pointer);
-    @include declaration(user-select, none);
-    @include declaration(font-size, $checkbox--font-size);
-    @include declaration(line-height, $checkbox--line-height);
-    @include declaration(padding, $checkbox--padding);
-    @include declaration(margin, $checkbox--margin);
-    @include declaration(font-style, $checkbox--font-style);
-    @include declaration(font-weight, $checkbox--font-weight);
-    @include declaration(text-transform, $checkbox--text-transform);
-
-
-    @include block-generation($checkbox--selector);
-  }
+  @include statement($checkbox--selector, (
+    (position, relative),
+    (display, flex),
+    (cursor, pointer),
+    (user-select, none),
+    (font-size, $checkbox--font-size),
+    (line-height, $checkbox--line-height),
+    (padding, $checkbox--padding),
+    (margin, $checkbox--margin),
+    (font-style, $checkbox--font-style),
+    (font-weight, $checkbox--font-weight),
+    (text-transform, $checkbox--text-transform),
+  ));
 
 
-  $checkbox-native--selector: selector--set-element($checkbox--selector, 'native');
-  $checkbox-native-checked--selector: selector--append-pseudo-classes($checkbox-native--selector, 'checked');
+  $checkbox-native--selector: selector(set $checkbox--selector element 'native');
+  $checkbox-native-checked--selector: selector(append $checkbox-native--selector pseudo-class 'checked');
 
-  @include selector($checkbox-native--selector) {
-    @include declaration(position, absolute);
-    @include declaration(transform, translate(-50%, -50%));
-    @include declaration(opacity, 0);
-    @include declaration('-include-forms--checkbox-native-margin', $checkbox-indicator--size);
-
-    @include block-generation($checkbox-native--selector);
-  }
+  @include statement($checkbox-native--selector, (
+    (position, absolute),
+    (transform, translate(-50%, -50%)),
+    (opacity, 0),
+    ('@include forms--checkbox-native-margin', $checkbox-indicator--size),
+  ));
 
 
-  $checkbox-indicator--selector: selector--set-element($checkbox--selector, 'indicator');
-  $checkbox-indicator-checked--selector: selector--append-parent($checkbox-indicator--selector, $checkbox-native-checked--selector, '~');
+  $checkbox-indicator--selector: selector(set $checkbox--selector element 'indicator');
+  $checkbox-indicator-checked--selector: selector(append $checkbox-indicator--selector parent $checkbox-native-checked--selector as '~');
 
-  @include selector($checkbox-indicator--selector) {
-    @include declaration(display, inline-block);
-    @include declaration(width, $checkbox-indicator--size);
-    @include declaration(height, $checkbox-indicator--size);
-    @include declaration(margin, $checkbox-indicator--margin);
-    @include declaration(background-color, $checkbox-indicator--background-color);
-    @include declaration(background-image, $checkbox-indicator--background-image);
-    @include declaration(background-repeat, $checkbox-indicator--background-repeat);
-    @include declaration(background-size, $checkbox-indicator--background-size);
-    @include declaration(background-position, $checkbox-indicator--background-position);
-    @include declaration(border-radius, $checkbox-indicator--border-radius);
-    @include declaration(border-width, $checkbox-indicator--border-width);
-    @include declaration(border-style, $checkbox-indicator--border-style);
-    @include declaration(border-color, $checkbox-indicator--border-color);
-    @include declaration(transition-property, $checkbox-indicator--transition-property);
-    @include declaration(transition-timing-function, $checkbox-indicator--transition-timing-function);
-    @include declaration(transition-duration, $checkbox-indicator--transition-duration);
-    @include declaration(box-shadow, $checkbox-indicator--box-shadow);
+  @include statement($checkbox-indicator--selector, (
+    (display, inline-block),
+    (width, $checkbox-indicator--size),
+    (height, $checkbox-indicator--size),
+    (margin, $checkbox-indicator--margin),
+    (background-color, $checkbox-indicator--background-color),
+    (background-image, $checkbox-indicator--background-image),
+    (background-repeat, $checkbox-indicator--background-repeat),
+    (background-size, $checkbox-indicator--background-size),
+    (background-position, $checkbox-indicator--background-position),
+    (border-radius, $checkbox-indicator--border-radius),
+    (border-width, $checkbox-indicator--border-width),
+    (border-style, $checkbox-indicator--border-style),
+    (border-color, $checkbox-indicator--border-color),
+    (transition-property, $checkbox-indicator--transition-property),
+    (transition-timing-function, $checkbox-indicator--transition-timing-function),
+    (transition-duration, $checkbox-indicator--transition-duration),
+    (box-shadow, $checkbox-indicator--box-shadow),
+  ));
 
-    @include block-generation($checkbox-indicator--selector);
-  }
-
-  @include selector($checkbox-indicator-checked--selector) {
-    @include declaration(background-color, $checkbox-indicator-checked--background-color);
-    @include declaration(background-image, $checkbox-indicator-checked--background-image);
-    @include declaration(background-repeat, $checkbox-indicator-checked--background-repeat);
-    @include declaration(background-size, $checkbox-indicator-checked--background-size);
-    @include declaration(background-position, $checkbox-indicator-checked--background-position);
-    @include declaration(border-color, $checkbox-indicator-checked--border-color);
-    @include declaration(box-shadow, $checkbox-indicator-checked--box-shadow);
-
-    @include block-generation($checkbox-indicator-checked--selector);
-  }
+  @include statement($checkbox-indicator-checked--selector, (
+    (background-color, $checkbox-indicator-checked--background-color),
+    (background-image, $checkbox-indicator-checked--background-image),
+    (background-repeat, $checkbox-indicator-checked--background-repeat),
+    (background-size, $checkbox-indicator-checked--background-size),
+    (background-position, $checkbox-indicator-checked--background-position),
+    (border-color, $checkbox-indicator-checked--border-color),
+    (box-shadow, $checkbox-indicator-checked--box-shadow),
+  ));
 }
 
 
 
 @if $radio--enable {
-  $radio--selector: selector--constructor($form--synthax, 'radio');
+  $radio--selector: selector(new 'radio' with $form--syntax);
 
-  @include selector($radio--selector) {
-    @include declaration(position, relative);
-    @include declaration(display, flex);
-    @include declaration(cursor, pointer);
-    @include declaration(user-select, none);
-    @include declaration(font-size, $radio--font-size);
-    @include declaration(line-height, $radio--line-height);
-    @include declaration(padding, $radio--padding);
-    @include declaration(margin, $radio--margin);
-    @include declaration(font-style, $radio--font-style);
-    @include declaration(font-weight, $radio--font-weight);
-    @include declaration(text-transform, $radio--text-transform);
-
-
-    @include block-generation($radio--selector);
-  }
+  @include statement($radio--selector, (
+    (position, relative),
+    (display, flex),
+    (cursor, pointer),
+    (user-select, none),
+    (font-size, $radio--font-size),
+    (line-height, $radio--line-height),
+    (padding, $radio--padding),
+    (margin, $radio--margin),
+    (font-style, $radio--font-style),
+    (font-weight, $radio--font-weight),
+    (text-transform, $radio--text-transform),
+  ));
 
 
-  $radio-native--selector: selector--set-element($radio--selector, 'native');
-  $radio-native-checked--selector: selector--append-pseudo-classes($radio-native--selector, 'checked');
+  $radio-native--selector: selector(set $radio--selector element 'native');
+  $radio-native-checked--selector: selector(append $radio-native--selector pseudo-class 'checked');
 
-  @include selector($radio-native--selector) {
-    @include declaration(position, absolute);
-    @include declaration(transform, translate(-50%, -50%));
-    @include declaration(opacity, 0);
-    @include declaration('-include-forms--checkbox-native-margin', $radio-indicator--size);
-
-    @include block-generation($radio-native--selector);
-  }
+  @include statement($radio-native--selector, (
+    (position, absolute),
+    (transform, translate(-50%, -50%)),
+    (opacity, 0),
+    ('@include forms--checkbox-native-margin', $radio-indicator--size),
+  ));
 
 
-  $radio-indicator--selector: selector--set-element($radio--selector, 'indicator');
-  $radio-indicator-checked--selector: selector--append-parent($radio-indicator--selector, $radio-native-checked--selector, '~');
+  $radio-indicator--selector: selector(set $radio--selector element 'indicator');
+  $radio-indicator-checked--selector: selector(append $radio-indicator--selector parent $radio-native-checked--selector as '~');
 
-  @include selector($radio-indicator--selector) {
-    @include declaration(display, inline-block);
-    @include declaration(width, $radio-indicator--size);
-    @include declaration(height, $radio-indicator--size);
-    @include declaration(margin, $radio-indicator--margin);
-    @include declaration(background-color, $radio-indicator--background-color);
-    @include declaration(background-image, $radio-indicator--background-image);
-    @include declaration(background-repeat, $radio-indicator--background-repeat);
-    @include declaration(background-size, $radio-indicator--background-size);
-    @include declaration(background-position, $radio-indicator--background-position);
-    @include declaration(border-radius, $radio-indicator--border-radius);
-    @include declaration(border-width, $radio-indicator--border-width);
-    @include declaration(border-style, $radio-indicator--border-style);
-    @include declaration(border-color, $radio-indicator--border-color);
-    @include declaration(transition-property, $radio-indicator--transition-property);
-    @include declaration(transition-timing-function, $radio-indicator--transition-timing-function);
-    @include declaration(transition-duration, $radio-indicator--transition-duration);
-    @include declaration(box-shadow, $radio-indicator--box-shadow);
+  @include statement($radio-indicator--selector, (
+    (display, inline-block),
+    (width, $radio-indicator--size),
+    (height, $radio-indicator--size),
+    (margin, $radio-indicator--margin),
+    (background-color, $radio-indicator--background-color),
+    (background-image, $radio-indicator--background-image),
+    (background-repeat, $radio-indicator--background-repeat),
+    (background-size, $radio-indicator--background-size),
+    (background-position, $radio-indicator--background-position),
+    (border-radius, $radio-indicator--border-radius),
+    (border-width, $radio-indicator--border-width),
+    (border-style, $radio-indicator--border-style),
+    (border-color, $radio-indicator--border-color),
+    (transition-property, $radio-indicator--transition-property),
+    (transition-timing-function, $radio-indicator--transition-timing-function),
+    (transition-duration, $radio-indicator--transition-duration),
+    (box-shadow, $radio-indicator--box-shadow),
+  ));
 
-    @include block-generation($radio-indicator--selector);
-  }
-
-  @include selector($radio-indicator-checked--selector) {
-    @include declaration(background-color, $radio-indicator-checked--background-color);
-    @include declaration(background-image, $radio-indicator-checked--background-image);
-    @include declaration(background-repeat, $radio-indicator-checked--background-repeat);
-    @include declaration(background-size, $radio-indicator-checked--background-size);
-    @include declaration(background-position, $radio-indicator-checked--background-position);
-    @include declaration(border-color, $radio-indicator-checked--border-color);
-    @include declaration(box-shadow, $radio-indicator-checked--box-shadow);
-
-    @include block-generation($radio-indicator-checked--selector);
-  }
+  @include statement($radio-indicator-checked--selector, (
+    (background-color, $radio-indicator-checked--background-color),
+    (background-image, $radio-indicator-checked--background-image),
+    (background-repeat, $radio-indicator-checked--background-repeat),
+    (background-size, $radio-indicator-checked--background-size),
+    (background-position, $radio-indicator-checked--background-position),
+    (border-color, $radio-indicator-checked--border-color),
+    (box-shadow, $radio-indicator-checked--box-shadow),
+  ));
 }
 
 
 @if $select--enable {
-  $select--selector: selector--constructor($form--synthax, 'select');
+  $select--selector: selector(new select as $form--syntax);
 
-  @include selector($select--selector) {
-    @include declaration(position, relative);
-    @include declaration(display, inline-block);
-    @include declaration(font-size, $select--font-size);
-    @include declaration(font-family, $select--font-family);
-    @include declaration(border-radius, $select--border-radius);
-    @include declaration(border-width, $select--border-width);
-    @include declaration(border-style, $select--border-style);
-    @include declaration(border-color, $select--border-color);
-    @include declaration(box-shadow, $select--box-shadow);
-    @include declaration(width, $select--width);
-    @include declaration(height, $select--height);
-    @include declaration(margin, $select--margin);
-
-    @include block-generation($select--selector);
-  }
+  @include statement($select--selector, (
+    (position, relative),
+    (display, inline-block),
+    (font-size, $select--font-size),
+    (font-family, $select--font-family),
+    (border-radius, $select--border-radius),
+    (border-width, $select--border-width),
+    (border-style, $select--border-style),
+    (border-color, $select--border-color),
+    (box-shadow, $select--box-shadow),
+    (width, $select--width),
+    (height, $select--height),
+    (margin, $select--margin),
+  ));
 
 
-  $select-native--selector: selector--set-element($select--selector, 'native');
+  $select-native--selector: selector(set $select--selector element 'native');
 
-  @include selector($select-native--selector) {
-    @include declaration(display, inline-block);
-    @include declaration(font-size, 1em);
-    @include declaration(width, 100%);
-    @include declaration(margin, 0);
-    @include declaration(padding-top, $select--padding-y);
-    @include declaration(padding-bottom, $select--padding-y);
-    @include declaration(padding-left, $select--padding-x);
-    @include declaration('-include-forms--select-padding-right', $select--padding-x);
-    @include declaration(line-height, $select--line-height);
-    @include declaration(color, $select--color);
-    @include declaration(background-color, $select--background-color);
-    @include declaration(border, 0);
-    @include declaration(border-radius, $select--border-radius);
-    @include declaration(cursor, $select--cursor);
-    @include declaration(outline, 0);
-    @include declaration(appearance, none);
+  @include statement($select-native--selector, (
+    (display, inline-block),
+    (font-size, 1em),
+    (width, 100%),
+    (margin, 0),
+    (padding-top, $select--padding-y),
+    (padding-bottom, $select--padding-y),
+    (padding-left, $select--padding-x),
+    ('-include-forms--select-padding-right', $select--padding-x),
+    (line-height, $select--line-height),
+    (color, $select--color),
+    (background-color, $select--background-color),
+    (border, 0),
+    (border-radius, $select--border-radius),
+    (cursor, $select--cursor),
+    (outline, 0),
+    (appearance, none),
 
     // Undo the Firefox inner focus ring
-    @include declaration(color, transparent, (':focus', ':-moz-focusring'));
-    @include declaration(text-shadow, 0 0 0 #000, (':focus', ':-moz-focusring'));
-
-    @include block-generation($select-native--selector);
-  }
+    (color, transparent, (':focus', ':-moz-focusring')),
+    (text-shadow, 0 0 0 #000, (':focus', ':-moz-focusring')),
+  ));
 
 
-  $select-caret--selector: selector--set-pseudo-element($select--selector, 'after');
+  $select-caret--selector: selector(set $select--selector pseudo-element 'after');
 
-  @include selector($select-caret--selector) {
-    @include declaration(content, '');
-    @include declaration(position, absolute);
-    @include declaration(top, 50%);
-    @include declaration(right, $select--padding-x);
-    @include declaration(display, inline-block);
-    @include declaration('-include-forms--select-caret-switch', $select-caret--method);
-    @include declaration('-include-forms--select-caret-margin-top', $select-caret--height);
-
-    @include block-generation($select-caret--selector);
-  }
+  @include statement($select-caret--selector, (
+    (content, ''),
+    (position, absolute),
+    (top, 50%),
+    (right, $select--padding-x),
+    (display, inline-block),
+    ('-include-forms--select-caret-switch', $select-caret--method),
+    ('-include-forms--select-caret-margin-top', $select-caret--height),
+  ));
 }
