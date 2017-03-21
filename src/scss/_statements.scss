@@ -265,7 +265,7 @@
     (top, 50%),
     (right, $select--padding-x),
     (display, inline-block),
-    ('-include-forms--select-caret-switch', $select-caret--method),
-    ('-include-forms--select-caret-margin-top', $select-caret--height),
+    ('@include forms--select-caret-switch', $select-caret--method),
+    ('@include forms--select-caret-margin-top', $select-caret--height),
   ));
 }
