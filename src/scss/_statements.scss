@@ -217,7 +217,7 @@
 
   @include statement($select--selector, (
     (position, relative),
-    (display, inline-block),
+    (display, block),
     (font-size, $select--font-size),
     (font-family, $select--font-family),
     (border-radius, $select--border-radius),
