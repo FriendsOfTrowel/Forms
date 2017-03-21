@@ -6,7 +6,7 @@
   @return $number;
 }
 
-@mixin forms--md-form-group($value, $flags) {
+@function forms--md-form-group($value, $flags) {
   $label--font-size: value($formgroup-label--font-size, $flags);
   $label--line-height: value($formgroup-label--line-height, $flags);
   $label--margin-bottom: value($formgroup-label--margin-bottom, $flags);
@@ -14,16 +14,20 @@
   $label--outer-height: (strip-unit($label--font-size) * $label--margin-bottom) + $label--inner-height;
 
   @if $value {
-    @include declaration(padding-top, $label--outer-height, $flags);
-    @include declaration(position, relative, $flags);
+    @return (
+      (padding-top, $label--outer-height, $flags),
+      (position, relative, $flags),
+    );
   } @else {
-    @include declaration(padding-top, 0, $flags);
-    @include declaration(position, static, $flags);
+    @return (
+      (padding-top, 0, $flags),
+      (position, static, $flags),
+    );
   }
 }
 
 
-@mixin forms--md-form-label($value, $flags) {
+@function forms--md-form-label($value, $flags) {
   $label--font-size: value($formgroup-label--font-size, $flags);
   $label--line-height: value($formgroup-label--line-height, $flags);
   $label--margin-bottom: value($formgroup-label--margin-bottom, $flags);
@@ -34,16 +38,21 @@
   $input--line-height: value($formgroup-input--line-height, $flags);
 
   @if $value {
-    @include declaration(position, absolute, $flags);
-    @include declaration(top, $label--outer-height, append($flags, '[data-mdform="folded"'));
-    @include declaration(font-size, $input--font-size, append($flags, '[data-mdform="folded"'));
-    @include declaration(line-height, $input--line-height, append($flags, '[data-mdform="folded"'));
+    @return (
+      (position, absolute, $flags),
+      (top, $label--outer-height, append($flags, '[data-mdform="folded"')),
+      (font-size, $input--font-size, append($flags, '[data-mdform="folded"')),
+      (line-height, $input--line-height, append($flags, '[data-mdform="folded"')),
 
-    @include declaration(top, 0, append($flags, '[data-mdform="unfolded"'));
-    @include declaration(font-size, $label--font-size, append($flags, '[data-mdform="unfolded"'));
-    @include declaration(line-height, $label--line-height, append($flags, '[data-mdform="unfolded"'));
-    @include declaration(transition, all ease-in-out 200ms, $flags);
+      (top, 0, append($flags, '[data-mdform="unfolded"')),
+      (font-size, $label--font-size, append($flags, '[data-mdform="unfolded"')),
+      (line-height, $label--line-height, append($flags, '[data-mdform="unfolded"')),
+      (transition, all ease-in-out 200ms, $flags),
+
+    );
   } @else {
-    @include declaration(position, static, $flags);
+    @return (
+      (position, static, $flags),
+    )
   }
 }
