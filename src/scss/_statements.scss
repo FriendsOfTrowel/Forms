@@ -113,10 +113,10 @@
 
 
   $checkbox-indicator--selector: selector(set $checkbox--selector element 'indicator');
-  $checkbox-indicator-checked--selector: selector(append $checkbox-indicator--selector parent $checkbox-native-checked--selector as '~');
 
   @include statement($checkbox-indicator--selector, (
     (display, inline-block),
+    (position, relative),
     (width, $checkbox-indicator--size),
     (height, $checkbox-indicator--size),
     (margin, $checkbox-indicator--margin),
@@ -135,14 +135,49 @@
     (box-shadow, $checkbox-indicator--box-shadow),
   ));
 
-  @include statement($checkbox-indicator-checked--selector, (
-    (background-color, $checkbox-indicator-checked--background-color),
-    (background-image, $checkbox-indicator-checked--background-image),
-    (background-repeat, $checkbox-indicator-checked--background-repeat),
-    (background-size, $checkbox-indicator-checked--background-size),
-    (background-position, $checkbox-indicator-checked--background-position),
-    (border-color, $checkbox-indicator-checked--border-color),
-    (box-shadow, $checkbox-indicator-checked--box-shadow),
+  $checkbox-indicator-before--selector: selector(set $checkbox-indicator--selector pseudo-element 'before');
+
+  @include statement($checkbox-indicator-before--selector, (
+    (content, ''),
+    (position, absolute),
+    (top, 50%),
+    (left, 50%),
+    (transform, translate(-50%, -50%)),
+    (width, $checkbox-indicator-before--width),
+    (height, $checkbox-indicator-before--height),
+    (background-color, $checkbox-indicator-before--background-color),
+    (background-image, $checkbox-indicator-before--background-image),
+    (background-repeat, $checkbox-indicator-before--background-repeat),
+    (background-size, $checkbox-indicator-before--background-size),
+    (background-position, $checkbox-indicator-before--background-position),
+    (border-radius, $checkbox-indicator-before--border-radius),
+    (border-width, $checkbox-indicator-before--border-width),
+    (border-style, $checkbox-indicator-before--border-style),
+    (border-color, $checkbox-indicator-before--border-color),
+    (transition-property, $checkbox-indicator-before--transition-property),
+    (transition-timing-function, $checkbox-indicator-before--transition-timing-function),
+    (transition-duration, $checkbox-indicator-before--transition-duration),
+    (box-shadow, $checkbox-indicator-before--box-shadow),
+  ));
+
+  $checkbox-indicator-checked-before--selector: selector(append $checkbox-indicator-before--selector parent $checkbox-native-checked--selector as '~');
+
+  @include statement($checkbox-indicator-checked-before--selector, (
+    (width, $checkbox-indicator-checked-before--width),
+    (height, $checkbox-indicator-checked-before--height),
+    (background-color, $checkbox-indicator-checked-before--background-color),
+    (background-image, $checkbox-indicator-checked-before--background-image),
+    (background-repeat, $checkbox-indicator-checked-before--background-repeat),
+    (background-size, $checkbox-indicator-checked-before--background-size),
+    (background-position, $checkbox-indicator-checked-before--background-position),
+    (border-radius, $checkbox-indicator-checked-before--border-radius),
+    (border-width, $checkbox-indicator-checked-before--border-width),
+    (border-style, $checkbox-indicator-checked-before--border-style),
+    (border-color, $checkbox-indicator-checked-before--border-color),
+    (transition-property, $checkbox-indicator-checked-before--transition-property),
+    (transition-timing-function, $checkbox-indicator-checked-before--transition-timing-function),
+    (transition-duration, $checkbox-indicator-checked-before--transition-duration),
+    (box-shadow, $checkbox-indicator-checked-before--box-shadow),
   ));
 }
 
@@ -182,6 +217,7 @@
 
   @include statement($radio-indicator--selector, (
     (display, inline-block),
+    (position, relative),
     (width, $radio-indicator--size),
     (height, $radio-indicator--size),
     (margin, $radio-indicator--margin),
@@ -200,14 +236,49 @@
     (box-shadow, $radio-indicator--box-shadow),
   ));
 
-  @include statement($radio-indicator-checked--selector, (
-    (background-color, $radio-indicator-checked--background-color),
-    (background-image, $radio-indicator-checked--background-image),
-    (background-repeat, $radio-indicator-checked--background-repeat),
-    (background-size, $radio-indicator-checked--background-size),
-    (background-position, $radio-indicator-checked--background-position),
-    (border-color, $radio-indicator-checked--border-color),
-    (box-shadow, $radio-indicator-checked--box-shadow),
+  $radio-indicator-before--selector: selector(set $radio-indicator--selector pseudo-element 'before');
+
+  @include statement($radio-indicator-before--selector, (
+    (content, ''),
+    (position, absolute),
+    (top, 50%),
+    (left, 50%),
+    (transform, translate(-50%, -50%)),
+    (width, $radio-indicator-before--width),
+    (height, $radio-indicator-before--height),
+    (background-color, $radio-indicator-before--background-color),
+    (background-image, $radio-indicator-before--background-image),
+    (background-repeat, $radio-indicator-before--background-repeat),
+    (background-size, $radio-indicator-before--background-size),
+    (background-position, $radio-indicator-before--background-position),
+    (border-radius, $radio-indicator-before--border-radius),
+    (border-width, $radio-indicator-before--border-width),
+    (border-style, $radio-indicator-before--border-style),
+    (border-color, $radio-indicator-before--border-color),
+    (transition-property, $radio-indicator-before--transition-property),
+    (transition-timing-function, $radio-indicator-before--transition-timing-function),
+    (transition-duration, $radio-indicator-before--transition-duration),
+    (box-shadow, $radio-indicator-before--box-shadow),
+  ));
+
+  $radio-indicator-checked-before--selector: selector(append $radio-indicator-before--selector parent $radio-native-checked--selector as '~');
+
+  @include statement($radio-indicator-checked-before--selector, (
+    (width, $radio-indicator-checked-before--width),
+    (height, $radio-indicator-checked-before--height),
+    (background-color, $radio-indicator-checked-before--background-color),
+    (background-image, $radio-indicator-checked-before--background-image),
+    (background-repeat, $radio-indicator-checked-before--background-repeat),
+    (background-size, $radio-indicator-checked-before--background-size),
+    (background-position, $radio-indicator-checked-before--background-position),
+    (border-radius, $radio-indicator-checked-before--border-radius),
+    (border-width, $radio-indicator-checked-before--border-width),
+    (border-style, $radio-indicator-checked-before--border-style),
+    (border-color, $radio-indicator-checked-before--border-color),
+    (transition-property, $radio-indicator-checked-before--transition-property),
+    (transition-timing-function, $radio-indicator-checked-before--transition-timing-function),
+    (transition-duration, $radio-indicator-checked-before--transition-duration),
+    (box-shadow, $radio-indicator-checked-before--box-shadow),
   ));
 }
 
@@ -241,7 +312,7 @@
     (padding-top, $select--padding-y),
     (padding-bottom, $select--padding-y),
     (padding-left, $select--padding-x),
-    ('-include-forms--select-padding-right', $select--padding-x),
+    ('@include forms--select-padding-right', $select--padding-x),
     (line-height, $select--line-height),
     (color, $select--color),
     (background-color, $select--background-color),
