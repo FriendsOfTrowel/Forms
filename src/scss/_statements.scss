@@ -312,7 +312,7 @@
     (padding-top, $select--padding-y),
     (padding-bottom, $select--padding-y),
     (padding-left, $select--padding-x),
-    ('-include-forms--select-padding-right', $select--padding-x),
+    ('@include forms--select-padding-right', $select--padding-x),
     (line-height, $select--line-height),
     (color, $select--color),
     (background-color, $select--background-color),
