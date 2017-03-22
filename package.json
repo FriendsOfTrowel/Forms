@@ -1,6 +1,6 @@
 {
   "name": "trowel-forms",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "The official Trowel Component for Forms",
   "scripts": {
     "test": "gulp test",
