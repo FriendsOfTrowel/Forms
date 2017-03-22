@@ -42,6 +42,6 @@
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
-    "trowel-core": "^4.0.1"
+    "trowel-core": "^4.0.2"
   }
 }
